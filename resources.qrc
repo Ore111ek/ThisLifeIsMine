@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>img/icon_budget1.png</file>
+        <file>img/icon_budget2.png</file>
+        <file>img/icon_budget3.png</file>
+        <file>img/icon_calendar.png</file>
+        <file>img/icon_dairy1.png</file>
+        <file>img/icon_dairy2.png</file>
+        <file>img/icon_habbits.png</file>
+        <file>img/icon_notes.png</file>
+        <file>img/icon_timetable1.png</file>
+        <file>img/icon_timetable2.png</file>
+        <file>img/icon_dairy3.png</file>
+        <file>img/icon_dairy4.png</file>
+        <file>img/icon_dairy5.png</file>
+    </qresource>
+</RCC>

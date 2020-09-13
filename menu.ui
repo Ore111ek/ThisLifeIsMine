@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Menu</class>
+ <widget class="QMainWindow" name="Menu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1300</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Меню</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1300</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Открыть</string>
+    </property>
+    <addaction name="action"/>
+    <addaction name="action_2"/>
+    <addaction name="action_3"/>
+    <addaction name="action_4"/>
+    <addaction name="action_5"/>
+    <addaction name="action_6"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action"/>
+   <addaction name="action_2"/>
+   <addaction name="action_7"/>
+   <addaction name="action_3"/>
+   <addaction name="action_4"/>
+   <addaction name="action_5"/>
+   <addaction name="action_6"/>
+   <addaction name="separator"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="action">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/img/icon_calendar.png</normaloff>:/icons/img/icon_calendar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Календарь</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/img/icon_dairy5.png</normaloff>:/icons/img/icon_dairy5.png</iconset>
+   </property>
+   <property name="text">
+    <string>Дневник</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/img/icon_timetable1.png</normaloff>:/icons/img/icon_timetable1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Расписание</string>
+   </property>
+  </action>
+  <action name="action_4">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/img/icon_notes.png</normaloff>:/icons/img/icon_notes.png</iconset>
+   </property>
+   <property name="text">
+    <string>Заметки</string>
+   </property>
+  </action>
+  <action name="action_5">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/img/icon_habbits.png</normaloff>:/icons/img/icon_habbits.png</iconset>
+   </property>
+   <property name="text">
+    <string>Хобби и привычки</string>
+   </property>
+  </action>
+  <action name="action_6">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/img/icon_budget1.png</normaloff>:/icons/img/icon_budget1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Бюджет</string>
+   </property>
+  </action>
+  <action name="action_7">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/img/icon_dairy1.png</normaloff>:/icons/img/icon_dairy1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ежедневник</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
