@@ -25,9 +25,9 @@ public:
 
 private slots:
 
-    void on_action_2_triggered();
-
     void on_action_triggered();
+
+    void on_action_2_triggered();
 
     void on_action_3_triggered();
 
@@ -40,16 +40,16 @@ private slots:
     void on_action_7_triggered();
 
 private:
-    Ui::Menu *ui;
+    Ui::Menu *ui;                   //Указатель на графический интерфейс
 
-    Authorization win_a;
-    Calendar win_c;
-    Notes win_n;
-    Dairy win_d;
-    Planner win_p;
-    Timetable win_t;
-    Hobby win_h;
-    Budget win_b;
+    Authorization *win_a = nullptr; //Указатели виджетов приложений
+    Calendar *win_c = nullptr;
+    Notes *win_n = nullptr;
+    Dairy *win_d = nullptr;
+    Planner *win_p = nullptr;
+    Timetable *win_t = nullptr;
+    Hobby *win_h = nullptr;
+    Budget *win_b = nullptr;
 };
 
 #endif // MENU_H
