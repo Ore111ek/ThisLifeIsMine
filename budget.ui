@@ -16,6 +16,11 @@
   <property name="windowTitle">
    <string>Бюджет</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/icons/img/icon_budget1.png</normalon>
+   </iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="Line" name="line">
     <property name="geometry">

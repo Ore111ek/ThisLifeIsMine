@@ -13,6 +13,11 @@
   <property name="windowTitle">
    <string>Хобби</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/icons/img/icon_habbits.png</normalon>
+   </iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
