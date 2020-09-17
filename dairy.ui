@@ -24,13 +24,14 @@
      <rect>
       <x>23</x>
       <y>5</y>
-      <width>380</width>
+      <width>441</width>
       <height>60</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>20</pointsize>
+      <family>Monotype Corsiva</family>
+      <pointsize>30</pointsize>
      </font>
     </property>
     <property name="text">
@@ -92,35 +93,188 @@
     <property name="palette">
      <palette>
       <active>
+       <colorrole role="Button">
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.000000000000000">
+           <color alpha="255">
+            <red>250</red>
+            <green>251</green>
+            <blue>254</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="1.000000000000000">
+           <color alpha="255">
+            <red>220</red>
+            <green>222</green>
+            <blue>241</blue>
+           </color>
+          </gradientstop>
+         </gradient>
+        </brush>
+       </colorrole>
        <colorrole role="Base">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>240</red>
-          <green>240</green>
-          <blue>240</blue>
-         </color>
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.000000000000000">
+           <color alpha="255">
+            <red>250</red>
+            <green>251</green>
+            <blue>254</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="1.000000000000000">
+           <color alpha="255">
+            <red>220</red>
+            <green>222</green>
+            <blue>241</blue>
+           </color>
+          </gradientstop>
+         </gradient>
+        </brush>
+       </colorrole>
+       <colorrole role="Window">
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.000000000000000">
+           <color alpha="255">
+            <red>250</red>
+            <green>251</green>
+            <blue>254</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="1.000000000000000">
+           <color alpha="255">
+            <red>220</red>
+            <green>222</green>
+            <blue>241</blue>
+           </color>
+          </gradientstop>
+         </gradient>
         </brush>
        </colorrole>
       </active>
       <inactive>
+       <colorrole role="Button">
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.000000000000000">
+           <color alpha="255">
+            <red>250</red>
+            <green>251</green>
+            <blue>254</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="1.000000000000000">
+           <color alpha="255">
+            <red>220</red>
+            <green>222</green>
+            <blue>241</blue>
+           </color>
+          </gradientstop>
+         </gradient>
+        </brush>
+       </colorrole>
        <colorrole role="Base">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>240</red>
-          <green>240</green>
-          <blue>240</blue>
-         </color>
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.000000000000000">
+           <color alpha="255">
+            <red>250</red>
+            <green>251</green>
+            <blue>254</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="1.000000000000000">
+           <color alpha="255">
+            <red>220</red>
+            <green>222</green>
+            <blue>241</blue>
+           </color>
+          </gradientstop>
+         </gradient>
+        </brush>
+       </colorrole>
+       <colorrole role="Window">
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.000000000000000">
+           <color alpha="255">
+            <red>250</red>
+            <green>251</green>
+            <blue>254</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="1.000000000000000">
+           <color alpha="255">
+            <red>220</red>
+            <green>222</green>
+            <blue>241</blue>
+           </color>
+          </gradientstop>
+         </gradient>
         </brush>
        </colorrole>
       </inactive>
       <disabled>
+       <colorrole role="Button">
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.000000000000000">
+           <color alpha="255">
+            <red>250</red>
+            <green>251</green>
+            <blue>254</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="1.000000000000000">
+           <color alpha="255">
+            <red>220</red>
+            <green>222</green>
+            <blue>241</blue>
+           </color>
+          </gradientstop>
+         </gradient>
+        </brush>
+       </colorrole>
        <colorrole role="Base">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>240</red>
-          <green>240</green>
-          <blue>240</blue>
-         </color>
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.000000000000000">
+           <color alpha="255">
+            <red>250</red>
+            <green>251</green>
+            <blue>254</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="1.000000000000000">
+           <color alpha="255">
+            <red>220</red>
+            <green>222</green>
+            <blue>241</blue>
+           </color>
+          </gradientstop>
+         </gradient>
+        </brush>
+       </colorrole>
+       <colorrole role="Window">
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.000000000000000">
+           <color alpha="255">
+            <red>250</red>
+            <green>251</green>
+            <blue>254</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="1.000000000000000">
+           <color alpha="255">
+            <red>220</red>
+            <green>222</green>
+            <blue>241</blue>
+           </color>
+          </gradientstop>
+         </gradient>
         </brush>
        </colorrole>
       </disabled>
@@ -128,8 +282,18 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>12</pointsize>
+      <family>Gabriola</family>
+      <pointsize>16</pointsize>
+      <italic>false</italic>
+      <kerning>true</kerning>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTextEdit{
+	background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0,
+                                stop: 0 #FAFBFE, stop: 1 #DCDEF1);
+	border: 1px solid gray;
+}</string>
     </property>
     <property name="placeholderText">
      <string/>
@@ -142,7 +306,7 @@
     <property name="geometry">
      <rect>
       <x>730</x>
-      <y>94</y>
+      <y>92</y>
       <width>670</width>
       <height>780</height>
      </rect>
@@ -156,35 +320,188 @@
     <property name="palette">
      <palette>
       <active>
+       <colorrole role="Button">
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="1.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.000000000000000">
+           <color alpha="255">
+            <red>250</red>
+            <green>251</green>
+            <blue>254</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="1.000000000000000">
+           <color alpha="255">
+            <red>220</red>
+            <green>222</green>
+            <blue>241</blue>
+           </color>
+          </gradientstop>
+         </gradient>
+        </brush>
+       </colorrole>
        <colorrole role="Base">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>240</red>
-          <green>240</green>
-          <blue>240</blue>
-         </color>
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="1.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.000000000000000">
+           <color alpha="255">
+            <red>250</red>
+            <green>251</green>
+            <blue>254</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="1.000000000000000">
+           <color alpha="255">
+            <red>220</red>
+            <green>222</green>
+            <blue>241</blue>
+           </color>
+          </gradientstop>
+         </gradient>
+        </brush>
+       </colorrole>
+       <colorrole role="Window">
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="1.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.000000000000000">
+           <color alpha="255">
+            <red>250</red>
+            <green>251</green>
+            <blue>254</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="1.000000000000000">
+           <color alpha="255">
+            <red>220</red>
+            <green>222</green>
+            <blue>241</blue>
+           </color>
+          </gradientstop>
+         </gradient>
         </brush>
        </colorrole>
       </active>
       <inactive>
+       <colorrole role="Button">
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="1.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.000000000000000">
+           <color alpha="255">
+            <red>250</red>
+            <green>251</green>
+            <blue>254</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="1.000000000000000">
+           <color alpha="255">
+            <red>220</red>
+            <green>222</green>
+            <blue>241</blue>
+           </color>
+          </gradientstop>
+         </gradient>
+        </brush>
+       </colorrole>
        <colorrole role="Base">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>240</red>
-          <green>240</green>
-          <blue>240</blue>
-         </color>
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="1.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.000000000000000">
+           <color alpha="255">
+            <red>250</red>
+            <green>251</green>
+            <blue>254</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="1.000000000000000">
+           <color alpha="255">
+            <red>220</red>
+            <green>222</green>
+            <blue>241</blue>
+           </color>
+          </gradientstop>
+         </gradient>
+        </brush>
+       </colorrole>
+       <colorrole role="Window">
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="1.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.000000000000000">
+           <color alpha="255">
+            <red>250</red>
+            <green>251</green>
+            <blue>254</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="1.000000000000000">
+           <color alpha="255">
+            <red>220</red>
+            <green>222</green>
+            <blue>241</blue>
+           </color>
+          </gradientstop>
+         </gradient>
         </brush>
        </colorrole>
       </inactive>
       <disabled>
+       <colorrole role="Button">
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="1.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.000000000000000">
+           <color alpha="255">
+            <red>250</red>
+            <green>251</green>
+            <blue>254</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="1.000000000000000">
+           <color alpha="255">
+            <red>220</red>
+            <green>222</green>
+            <blue>241</blue>
+           </color>
+          </gradientstop>
+         </gradient>
+        </brush>
+       </colorrole>
        <colorrole role="Base">
-        <brush brushstyle="SolidPattern">
-         <color alpha="255">
-          <red>240</red>
-          <green>240</green>
-          <blue>240</blue>
-         </color>
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="1.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.000000000000000">
+           <color alpha="255">
+            <red>250</red>
+            <green>251</green>
+            <blue>254</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="1.000000000000000">
+           <color alpha="255">
+            <red>220</red>
+            <green>222</green>
+            <blue>241</blue>
+           </color>
+          </gradientstop>
+         </gradient>
+        </brush>
+       </colorrole>
+       <colorrole role="Window">
+        <brush brushstyle="LinearGradientPattern">
+         <gradient startx="1.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+          <gradientstop position="0.000000000000000">
+           <color alpha="255">
+            <red>250</red>
+            <green>251</green>
+            <blue>254</blue>
+           </color>
+          </gradientstop>
+          <gradientstop position="1.000000000000000">
+           <color alpha="255">
+            <red>220</red>
+            <green>222</green>
+            <blue>241</blue>
+           </color>
+          </gradientstop>
+         </gradient>
         </brush>
        </colorrole>
       </disabled>
@@ -192,6 +509,7 @@
     </property>
     <property name="font">
      <font>
+      <family>Georgia</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -209,6 +527,13 @@
     </property>
     <property name="autoFillBackground">
      <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTextEdit{
+	background: qlineargradient(x1: 1, y1: 0, x2: 0, y2: 0, stop: 0 #FAFBFE, stop: 1 #DCDEF1);
+	border: 1px solid gray;
+	border-radius: 3px;
+}</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::NoFrame</enum>
@@ -645,9 +970,9 @@
    <widget class="Line" name="line_41">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>576</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -664,9 +989,9 @@
    <widget class="Line" name="line_45">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>840</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -683,9 +1008,9 @@
    <widget class="Line" name="line_66">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>864</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -702,9 +1027,9 @@
    <widget class="Line" name="line_39">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>552</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -721,9 +1046,9 @@
    <widget class="Line" name="line_59">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>312</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -740,9 +1065,9 @@
    <widget class="Line" name="line_38">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>672</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -759,9 +1084,9 @@
    <widget class="Line" name="line_49">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>792</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -778,9 +1103,9 @@
    <widget class="Line" name="line_35">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>288</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -797,9 +1122,9 @@
    <widget class="Line" name="line_44">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>264</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -816,9 +1141,9 @@
    <widget class="Line" name="line_55">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>600</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -835,9 +1160,9 @@
    <widget class="Line" name="line_40">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>240</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -854,9 +1179,9 @@
    <widget class="Line" name="line_48">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>360</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -873,9 +1198,9 @@
    <widget class="Line" name="line_64">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>696</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -892,9 +1217,9 @@
    <widget class="Line" name="line_61">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>816</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -911,9 +1236,9 @@
    <widget class="Line" name="line_56">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>648</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -930,9 +1255,9 @@
    <widget class="Line" name="line_57">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>456</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -949,9 +1274,9 @@
    <widget class="Line" name="line_43">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>216</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -968,9 +1293,9 @@
    <widget class="Line" name="line_65">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>528</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -987,9 +1312,9 @@
    <widget class="Line" name="line_37">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>504</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -1006,9 +1331,9 @@
    <widget class="Line" name="line_50">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>768</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -1025,9 +1350,9 @@
    <widget class="Line" name="line_46">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>192</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -1044,9 +1369,9 @@
    <widget class="Line" name="line_53">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>336</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -1063,9 +1388,9 @@
    <widget class="Line" name="line_63">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>432</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -1082,9 +1407,9 @@
    <widget class="Line" name="line_51">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>144</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -1101,9 +1426,9 @@
    <widget class="Line" name="line_60">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>720</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -1120,9 +1445,9 @@
    <widget class="Line" name="line_54">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>744</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -1139,9 +1464,9 @@
    <widget class="Line" name="line_42">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>624</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -1158,9 +1483,9 @@
    <widget class="Line" name="line_36">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>168</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -1177,9 +1502,9 @@
    <widget class="Line" name="line_58">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>384</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -1196,9 +1521,9 @@
    <widget class="Line" name="line_47">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>408</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -1215,9 +1540,9 @@
    <widget class="Line" name="line_52">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>480</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
@@ -1234,9 +1559,9 @@
    <widget class="Line" name="line_62">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>735</x>
       <y>120</y>
-      <width>669</width>
+      <width>660</width>
       <height>3</height>
      </rect>
     </property>
