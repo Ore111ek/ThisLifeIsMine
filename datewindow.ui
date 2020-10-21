@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DateWindow</class>
+ <widget class="QMainWindow" name="DateWindow">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>510</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Календарь</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QCalendarWidget" name="calendarWidget">
+      <property name="palette">
+       <palette>
+        <active/>
+        <inactive/>
+        <disabled/>
+       </palette>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QCalendarWidget QWidget#qt_calendar_navigationbar { 
+background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop: 0 #fff, stop: 1 #fff);
+}
+
+QCalendarWidget QToolButton {
+	height: 20px;
+	width: 100px;
+	color: #222;
+	font-size: 16px;
+	icon-size: 25px, 25px;
+}
+
+/*
+QCalendarWidget QMenu {
+	width: 150px;
+	left: 20px;
+	color: white;
+	font-size: 18px;
+	background-color: rgb(100, 100, 100);
+}*/
+QCalendarWidget QSpinBox { 
+	width: 100px; 
+	font-size:14px;  
+}
+*/
+QCalendarWidget QSpinBox::up-button { subcontrol-origin: border;  subcontrol-position: top right;  width:24px; }
+/*
+QCalendarWidget QSpinBox::down-button {subcontrol-origin: border; subcontrol-position: bottom right;  width:65px;}
+QCalendarWidget QSpinBox::up-arrow { width:56px;  height:56px; }
+*/
+QCalendarWidget QSpinBox::down-arrow { width:20px;  height:20px; }
+ */
+/* header row *//*
+QCalendarWidget QWidget { alternate-background-color: rgb(128, 128, 128); }
+ 
+/* normal days *//*
+QCalendarWidget QAbstractItemView:enabled 
+{
+	font-size:14px;  
+ 	color: rgb(180, 180, 180);  
+	background-color: black;  
+	selection-background-color: rgb(64, 64, 64); 
+	selection-color: rgb(0, 255, 0); 
+}
+ 
+/* days in other months *//*
+QCalendarWidget QAbstractItemView:disabled { color: rgb(64, 64, 64); }*/</string>
+      </property>
+      <property name="gridVisible">
+       <bool>true</bool>
+      </property>
+      <property name="verticalHeaderFormat">
+       <enum>QCalendarWidget::NoVerticalHeader</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Подтвердить дату</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>510</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
