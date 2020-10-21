@@ -29,6 +29,7 @@ SOURCES += \
         budget.cpp \
         calendar.cpp \
         dairy.cpp \
+        datewindow.cpp \
         hobby.cpp \
         main.cpp \
         menu.cpp \
@@ -41,6 +42,7 @@ HEADERS += \
         budget.h \
         calendar.h \
         dairy.h \
+        datewindow.h \
         hobby.h \
         menu.h \
         notes.h \
@@ -52,6 +54,7 @@ FORMS += \
         budget.ui \
         calendar.ui \
         dairy.ui \
+        datewindow.ui \
         hobby.ui \
         menu.ui \
         notes.ui \
