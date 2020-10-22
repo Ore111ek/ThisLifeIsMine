@@ -22,6 +22,7 @@ class Menu : public QMainWindow
 public:
     explicit Menu(QWidget *parent = nullptr);
     ~Menu();
+    QString username;
 
 private slots:
 
