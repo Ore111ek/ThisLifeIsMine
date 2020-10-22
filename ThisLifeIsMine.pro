@@ -31,6 +31,7 @@ SOURCES += \
         dairy.cpp \
         datewindow.cpp \
         hobby.cpp \
+        journal.cpp \
         main.cpp \
         menu.cpp \
         notes.cpp \
@@ -44,6 +45,7 @@ HEADERS += \
         dairy.h \
         datewindow.h \
         hobby.h \
+        journal.h \
         menu.h \
         notes.h \
         planner.h \
