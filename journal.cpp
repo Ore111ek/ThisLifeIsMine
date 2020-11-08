@@ -37,6 +37,7 @@ qint64 TIndexes::checkIndex(QString targetDate){    //targetDate в формат
     file.close();                   //Закрытие файла
     return pos;                     //Возвращаем позицию записи искомой даты или -1
 };
+
 /*!
 \param[in] date - дата создаваемого индекса в строчном формате "2020.04.15"
 \param[in] value - значение создаваемого индекса
