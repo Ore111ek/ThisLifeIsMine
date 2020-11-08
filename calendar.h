@@ -2,6 +2,7 @@
 #define CALENDAR_H
 
 #include <QMainWindow>
+#include "QtWidgets"
 
 namespace Ui {
 class Calendar;
@@ -14,6 +15,8 @@ class Calendar : public QMainWindow
 public:
     explicit Calendar(QWidget *parent = nullptr);
     ~Calendar();
+
+private slots:
 
 private:
     Ui::Calendar *ui;

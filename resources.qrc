@@ -13,5 +13,6 @@
         <file>img/icon_dairy3.png</file>
         <file>img/icon_dairy4.png</file>
         <file>img/icon_dairy5.png</file>
+        <file>img/calendar.png</file>
     </qresource>
 </RCC>
