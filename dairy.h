@@ -4,80 +4,107 @@
 #include <QMainWindow>
 #include <QFile>
 #include <QTextStream>
+#include <QTextEdit>
 #include "datewindow.h"
+#include "journal.h"
+
+/*!
+    \file
+    \brief Заголовочный файл с описанием классов для интерфейсной части дневника
+
+    Файл содержит описание классов TDiarySettings и Diary
+*/
+/*!
+    \brief Класс настроек для дневника
+
+    Объект класса представляет собой контейнер для хранения текущих интерфейсных настроек дневника
+*/
+class TDiarySettings{
+public:
+    QString correctHtml(QString Html, QString param, QString newValue);///< Изменение параметра в HTML строке
+    QString findParamHtml(QString Html, QString param);///< Поиск значения параметра в HTML строке
+    QFont mainFont;                 ///< Шрифт текста записи
+    QColor pageColor;               ///< Сплошной цвет страницы
+    QString gradientStyleDirect;    ///< Стиль CSS градиента для первой страницы
+    QString gradientStyleReverse;   ///< Стиль CSS градиента для второй страницы
+    QColor backgroundColor;         ///< Цвет выделения текста
+    QColor textColor;               ///< Цвет текста записи
+    QTextEdit *activeEdit = nullptr;
+};
 
 namespace Ui {
 class Dairy;
 }
+/*!
+    \brief Дневник
 
-class TIndexes{
-public:
-    void saveNew(QString date, qint64 pos);   //Создание индекса
-    void updateIndexes(QString date, qint64 position, qint64 length, bool flag); //Обновление индексов
-    qint64 checkIndex(QString date);            //Проверка существования индекса
-    void initFile(QString filename);        //Связь с файлом индексов
-    QFile file;
-};
-
-class TDate{
-public:
-    TDate();
-    QString currentDate;    //Дата запуска приложения
-    QString selectedDate;   //Выбранная дата
-    QString dateString(QDate selDate);   //Формирует строку из даты
-};
-
-class TRecord{
-public:
-    TRecord(){
-        date = "";
-        text = date = changeDate;
-    }
-    TRecord(QString ntext, QString ndate, QString nchangeDate);
-    QString text;           //Текст записи
-    QString date;           //Дата записи
-    QString changeDate;     //Дата последнего изменения
-};
-
-class TJournal{
-public:
-    void saveNew(TRecord rec);      //Сохраняет в конце журнала новую запись указанной даты
-    void rewrite(TRecord rec);      //Сохраняет изменения в записи указанной даты
-    qint64 findRecord(QString date);//Находит позицию записи искомой даты в журнале
-    void initFile(QString filename);//Связь журнала с файлом записей
-    QString readText(qint64 pos);   //Чтение текста в позиции pos
-    TIndexes bookmarks;              //Закладки для быстрого поиска месяца
-private:
-    QFile file;                     //Файл с записями из дневника
-    TRecord oldRecord;              //Созданная ранее запись
-    qint64 posOfOld;                //Позиция в файле записи для изменения
-};
-
+    Объект класса представляет собой дневник, включающий в себя обработчики событий,
+    журнал для записей, файл с индексами и контейнер с текущими настройками интерфейса
+*/
 class Dairy : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit Dairy(QWidget *parent = nullptr);
-    TDate date;                 //Дата
-    TJournal records;           //Записи
-    bool rewritingFlag = false; //Флаг режима перезаписи
-    DateWindow *Cal;            //Календарь для выбора даты
-    ~Dairy();
+    explicit Dairy(QWidget *parent = nullptr, QString name = "Corporate");  ///< Конструктор
+    QString username;           ///< Логин пользователя
+    TDate date;                 ///< Дата
+    TJournal records;           ///< Журнал с записями
+    TDiarySettings settings;    ///< Настройки интерфейса дневника
+    bool rewritingFlag = false; ///< Флаг режима перезаписи
+    bool changeFlag = false;    ///< Флаг изменения открытой записи
+    DateWindow *Cal;            ///< Окно календаря для выбора даты
+    ~Dairy();                   ///< Деструктор для освобождения памяти
 
 private slots:
-    void on_saveButton_clicked(); //Сохранить запись
+    void closeEvent(QCloseEvent *event);
 
-    void on_findButton_clicked(); //Открыть в дневнике выбранную дату
+    void on_saveButton_clicked();               ///< Сохранить запись в журнал
 
-    void on_pushButton_clicked(); //Открыть календарь для выбора даты
+    void on_findButton_clicked();               ///< Открыть в дневнике выбранную дату
 
-    void on_fontSelect_currentTextChanged(const QString &arg1); //Изменение шрифта
+    void on_pushButton_clicked();               ///< Открыть календарь для выбора даты
 
-    void on_fontSize_valueChanged(int arg1);  //Изменение размера шрифта
+    void on_fontSize_valueChanged(int arg1);    ///< Изменение размера шрифта текста
+
+    void on_actionFont_triggered();             ///< Выбор пользователем шрифта текста
+
+    void on_actionColor_triggered();            ///< Изменение цвета выделенного текста
+
+    void on_actionBackground_triggered();       ///< Изменение цвета фона выделенного текста
+
+    void on_actionPageGradient_triggered();     ///< Выбор градиента для страниц
+
+    void on_actionColorPage_triggered();        ///< Выбор пользователем сплошного цвета страниц
+
+    void on_actionChoiceTextColor_triggered();  ///< Выбор пользователем цвета текста
+
+    void on_actionChoiceBackColor_triggered();  ///< Выбор пользователем цвета для выделения текста
+
+    void on_actionSetFont_triggered();          ///< Изменение шрифта текста
+
+    void on_actionSetPageColor_triggered();     ///< Установка цвета страниц
+
+    void on_fontSelect_activated(const QString &arg1);  ///< Изменение шрифта текста при выборе в Select
+
+    void on_textColorButton_clicked();
+
+    void on_BackColorButton_clicked();
+
+    void on_textEdit_cursorPositionChanged();
+
+    void on_textEdit_2_cursorPositionChanged();
+
+    void on_TextColor_clicked();
+
+    void on_BackColor_clicked();
+
+    void on_textEdit_textChanged();
+
+    void on_textEdit_2_textChanged();
 
 private:
-    Ui::Dairy *ui;
+    Ui::Dairy *ui;  ///< Указатель на интерфейс дневника
 };
 
 #endif // DAIRY_H

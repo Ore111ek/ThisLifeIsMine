@@ -6,14 +6,16 @@ Menu::Menu(QWidget *parent) :
     ui(new Ui::Menu)
 {
     ui->setupUi(this);              //Инициализация графического интерфейса Меню
-    delete win_a;                   //Освободить уже выделенную для win_a память
-    win_a = new Authorization(this);//Выделить память для окна авторизации
-    win_a->show();                  //Отобразить окно авторизации
+    //delete win_a;                   //Освободить уже выделенную для win_a память
+    //win_a = new Authorization(this);//Выделить память для окна авторизации
+    //win_a->show();                  //Отобразить окно авторизации
+    delete win_p;                   //Удалить три строки кода
+    win_p = new Planner(this);
+    win_p->show();
 }
 //Деструктор окна Меню
 Menu::~Menu()
 {
-    delete ui;      //Освобождение пямяти для интерфейса Меню
     delete win_a;   //Освобождение памяти,
     delete win_c;   //выделенной для окон,
     delete win_d;   //вызванных из Меню
@@ -22,6 +24,7 @@ Menu::~Menu()
     delete win_h;
     delete win_b;
     delete win_p;
+    delete ui;      //Освобождение пямяти для интерфейса Меню
 }
 //Освобождение и выделение памяти для календаря, отображение окна созданного календаря
 void Menu::on_action_triggered()
