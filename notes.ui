@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1001</width>
+    <height>863</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,16 +21,60 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLabel" name="label">
-      <property name="font">
-       <font>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Заметки</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLineEdit" name="findEdit"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="findButton">
+        <property name="text">
+         <string>Найти</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="showAllButton">
+        <property name="text">
+         <string>Показать все</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="createButton">
+        <property name="text">
+         <string>Создать заметку</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="BackColor">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+ background-color: yellow; 
+ border: 1px solid #555;
+ width:25px;
+ height:25px;
+ }</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
      <widget class="Line" name="line">
@@ -49,10 +93,19 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>776</width>
-         <height>468</height>
+         <width>977</width>
+         <height>741</height>
         </rect>
        </property>
+       <layout class="QFormLayout" name="formLayout">
+        <item row="0" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+         </layout>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
@@ -63,7 +116,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1001</width>
      <height>26</height>
     </rect>
    </property>

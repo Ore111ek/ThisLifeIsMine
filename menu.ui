@@ -6,20 +6,310 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>500</height>
+    <width>447</width>
+    <height>382</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Меню</string>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_7">
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="spacing">
+       <number>15</number>
+      </property>
+      <item row="1" column="3">
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="resources.qrc">:/icons/img/icon_dairy1.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="plannerButton">
+          <property name="text">
+           <string>Ежедневник</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="2">
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="resources.qrc">:/icons/img/icon_dairy5.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="diaryButton">
+          <property name="text">
+           <string>Дневник</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="2" column="3">
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QLabel" name="label_11">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="resources.qrc">:/icons/img/settings.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="settingsButton">
+          <property name="text">
+           <string>Настройки</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="3" column="2">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Expanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="1">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="resources.qrc">:/icons/img/icon_notes.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="notesButton">
+          <property name="text">
+           <string>Заметки</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="2" column="2">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="resources.qrc">:/icons/img/check.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="hobbyButton">
+          <property name="text">
+           <string>Трекер привычек</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="1">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QLabel" name="imageCalendar">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="resources.qrc">:/icons/img/icon_calendar.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="calendarButton">
+          <property name="text">
+           <string>Календарь</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="2" column="0">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="2">
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="4">
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>447</width>
      <height>26</height>
     </rect>
    </property>
@@ -27,32 +317,25 @@
     <property name="title">
      <string>Открыть</string>
     </property>
-    <addaction name="action"/>
-    <addaction name="action_2"/>
-    <addaction name="action_3"/>
-    <addaction name="action_4"/>
-    <addaction name="action_5"/>
-    <addaction name="action_6"/>
+    <addaction name="showCalendar"/>
+    <addaction name="showDiary"/>
+    <addaction name="showTimetable"/>
+    <addaction name="showNotes"/>
+    <addaction name="showHobby"/>
+    <addaction name="showBudget"/>
    </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Настройки</string>
+    </property>
+    <addaction name="change_user"/>
+    <addaction name="change_password"/>
+    <addaction name="close_action"/>
+   </widget>
+   <addaction name="menu_2"/>
    <addaction name="menu"/>
   </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>LeftToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-   <addaction name="action"/>
-   <addaction name="action_2"/>
-   <addaction name="action_7"/>
-   <addaction name="action_3"/>
-   <addaction name="action_4"/>
-   <addaction name="action_5"/>
-   <addaction name="action_6"/>
-   <addaction name="separator"/>
-  </widget>
-  <action name="action">
+  <action name="showCalendar">
    <property name="icon">
     <iconset resource="resources.qrc">
      <normaloff>:/icons/img/icon_calendar.png</normaloff>:/icons/img/icon_calendar.png</iconset>
@@ -61,7 +344,7 @@
     <string>Календарь</string>
    </property>
   </action>
-  <action name="action_2">
+  <action name="showDiary">
    <property name="icon">
     <iconset resource="resources.qrc">
      <normaloff>:/icons/img/icon_dairy5.png</normaloff>:/icons/img/icon_dairy5.png</iconset>
@@ -70,7 +353,7 @@
     <string>Дневник</string>
    </property>
   </action>
-  <action name="action_3">
+  <action name="showTimetable">
    <property name="icon">
     <iconset resource="resources.qrc">
      <normaloff>:/icons/img/icon_timetable1.png</normaloff>:/icons/img/icon_timetable1.png</iconset>
@@ -79,7 +362,7 @@
     <string>Расписание</string>
    </property>
   </action>
-  <action name="action_4">
+  <action name="showNotes">
    <property name="icon">
     <iconset resource="resources.qrc">
      <normaloff>:/icons/img/icon_notes.png</normaloff>:/icons/img/icon_notes.png</iconset>
@@ -88,7 +371,7 @@
     <string>Заметки</string>
    </property>
   </action>
-  <action name="action_5">
+  <action name="showHobby">
    <property name="icon">
     <iconset resource="resources.qrc">
      <normaloff>:/icons/img/icon_habbits.png</normaloff>:/icons/img/icon_habbits.png</iconset>
@@ -97,7 +380,7 @@
     <string>Хобби и привычки</string>
    </property>
   </action>
-  <action name="action_6">
+  <action name="showBudget">
    <property name="icon">
     <iconset resource="resources.qrc">
      <normaloff>:/icons/img/icon_budget1.png</normaloff>:/icons/img/icon_budget1.png</iconset>
@@ -106,13 +389,28 @@
     <string>Бюджет</string>
    </property>
   </action>
-  <action name="action_7">
+  <action name="showPlanner">
    <property name="icon">
     <iconset resource="resources.qrc">
      <normaloff>:/icons/img/icon_dairy1.png</normaloff>:/icons/img/icon_dairy1.png</iconset>
    </property>
    <property name="text">
     <string>Ежедневник</string>
+   </property>
+  </action>
+  <action name="close_action">
+   <property name="text">
+    <string>Закрыть приложение</string>
+   </property>
+  </action>
+  <action name="change_password">
+   <property name="text">
+    <string>Сменить пароль</string>
+   </property>
+  </action>
+  <action name="change_user">
+   <property name="text">
+    <string>Сменить пользователя</string>
    </property>
   </action>
  </widget>

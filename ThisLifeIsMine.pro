@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT += printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -30,12 +31,17 @@ SOURCES += \
         calendar.cpp \
         dairy.cpp \
         datewindow.cpp \
+        graph.cpp \
         hobby.cpp \
         journal.cpp \
         main.cpp \
         menu.cpp \
         notes.cpp \
         planner.cpp \
+        qcustomplot.cpp \
+        registration.cpp \
+        settings.cpp \
+        sha256.cpp \
         timetable.cpp
 
 HEADERS += \
@@ -44,11 +50,16 @@ HEADERS += \
         calendar.h \
         dairy.h \
         datewindow.h \
+        graph.h \
         hobby.h \
         journal.h \
         menu.h \
         notes.h \
         planner.h \
+        qcustomplot.h \
+        registration.h \
+        settings.h \
+        sha256.h \
         timetable.h
 
 FORMS += \
@@ -61,6 +72,8 @@ FORMS += \
         menu.ui \
         notes.ui \
         planner.ui \
+        registration.ui \
+        settings.ui \
         timetable.ui
 
 # Default rules for deployment.

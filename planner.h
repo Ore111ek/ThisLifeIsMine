@@ -18,10 +18,10 @@ public:
 
 class TTable{
 public:
-    QString tableText(QTableWidget *list);
+    QString tableText(QTableWidget *table);
     void strikeOutItem(QTableWidgetItem *item);
-    void addNew(QTableWidget *updlist, QTableWidgetItem *item);
-    void delEmpty(QTableWidget *updlist, QTableWidgetItem *item);
+    void addNew(QTableWidget *updtable, QTableWidgetItem *item);
+    void delEmpty(QTableWidget *updtable, QTableWidgetItem *item);
 };
 /*!
     \brief Класс настроек для ежедневника

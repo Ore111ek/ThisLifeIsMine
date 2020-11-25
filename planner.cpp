@@ -146,7 +146,6 @@ Planner::Planner(QWidget *parent, QString name) :
 {
     username = name;                    //Инициализация логина пользователя
     ui->setupUi(this);
-    categoryIndex = ui->week_Categories->currentIndex();
     ui->changeLabel->hide();
     ui->acceptButton->hide();
     ui->changeEdit->hide();
@@ -186,13 +185,7 @@ Planner::Planner(QWidget *parent, QString name) :
         QWidget *newTab = new QWidget(ui->week_Categories);
         ui->week_Categories->addTab(newTab, categories[i]);
     }
-    //QWidget *newTab = new QWidget(ui->week_Categories);
-    //QWidget *newTab2 = new QWidget(ui->week_Categories);
-    //ui->week_Categories->addTab()
-    //ui->week_Categories->addTab(newTab2, tr("Другое"));
-
-
-
+    categoryIndex = ui->week_Categories->currentIndex();
     records[1].initFile(username + "PlannerWRecords.txt");            //Передача в журнал названий
     records[1].bookmarks.initFile(username + "PlWBookMarks.txt");   //файлов для хранения записей и индексов
     records[0].initFile(username + "PlannerDRecords.txt");            //Передача в журнал названий

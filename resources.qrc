@@ -14,5 +14,17 @@
         <file>img/icon_dairy4.png</file>
         <file>img/icon_dairy5.png</file>
         <file>img/calendar.png</file>
+        <file>img/cancel.png</file>
+        <file>img/cancel_2.png</file>
+        <file>img/check.png</file>
+        <file>img/settings.png</file>
+        <file>img/credit.png</file>
+        <file>img/gift.png</file>
+        <file>img/heart.png</file>
+        <file>img/important.png</file>
+        <file>img/medicine.png</file>
+        <file>img/party.png</file>
+        <file>img/sport.png</file>
+        <file>img/trip.png</file>
     </qresource>
 </RCC>

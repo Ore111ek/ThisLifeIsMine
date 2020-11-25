@@ -9,6 +9,7 @@
 #include "timetable.h"
 #include "hobby.h"
 #include "budget.h"
+#include "settings.h"
 #include <QMainWindow>
 
 namespace Ui {
@@ -22,23 +23,41 @@ class Menu : public QMainWindow
 public:
     explicit Menu(QWidget *parent = nullptr);
     ~Menu();
-    QString username;
+    QString *username;
 
 private slots:
 
-    void on_action_triggered();
+    void on_showCalendar_triggered();
 
-    void on_action_2_triggered();
+    void on_showDiary_triggered();
 
-    void on_action_3_triggered();
+    void on_showTimetable_triggered();
 
-    void on_action_4_triggered();
+    void on_showNotes_triggered();
 
-    void on_action_5_triggered();
+    void on_showHobby_triggered();
 
-    void on_action_6_triggered();
+    void on_showBudget_triggered();
 
-    void on_action_7_triggered();
+    void on_showPlanner_triggered();
+
+    void on_calendarButton_clicked();
+
+    void on_diaryButton_clicked();
+
+    void on_plannerButton_clicked();
+
+    void on_notesButton_clicked();
+
+    void on_hobbyButton_clicked();
+
+    void on_settingsButton_clicked();
+
+    void on_close_action_triggered();
+
+    void on_change_password_triggered();
+
+    void on_change_user_triggered();
 
 private:
     Ui::Menu *ui;                   //Указатель на графический интерфейс
@@ -51,6 +70,7 @@ private:
     Timetable *win_t = nullptr;
     Hobby *win_h = nullptr;
     Budget *win_b = nullptr;
+    Settings *win_s = nullptr;
 };
 
 #endif // MENU_H
