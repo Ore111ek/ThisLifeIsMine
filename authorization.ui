@@ -190,6 +190,9 @@
     </item>
     <item>
      <widget class="QPushButton" name="corporateButton">
+      <property name="whatsThis">
+       <string>Если нет необходимости в защите данных паролем, то можно воспользоваться общей для компьютера учётной записью</string>
+      </property>
       <property name="text">
        <string>Общая учётная запись</string>
       </property>

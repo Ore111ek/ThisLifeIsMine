@@ -27,7 +27,6 @@ CONFIG += c++11
 
 SOURCES += \
         authorization.cpp \
-        budget.cpp \
         calendar.cpp \
         dairy.cpp \
         datewindow.cpp \
@@ -41,12 +40,10 @@ SOURCES += \
         qcustomplot.cpp \
         registration.cpp \
         settings.cpp \
-        sha256.cpp \
-        timetable.cpp
+        sha256.cpp
 
 HEADERS += \
         authorization.h \
-        budget.h \
         calendar.h \
         dairy.h \
         datewindow.h \
@@ -59,8 +56,7 @@ HEADERS += \
         qcustomplot.h \
         registration.h \
         settings.h \
-        sha256.h \
-        timetable.h
+        sha256.h
 
 FORMS += \
         authorization.ui \

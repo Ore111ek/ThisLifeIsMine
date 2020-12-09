@@ -196,7 +196,7 @@ void Notes::deleteNote(){
 }
 
 void Notes::deleteNote(int index){
-        for(int i = index; i < notes.size()-1; i++){
+        for(unsigned long long i = (unsigned long long)index; i < notes.size()-1; i++){
             notes[i].label->setText(notes[i+1].label->toPlainText());
             notes[i].text->setText(notes[i+1].text->toPlainText());
             notes[i].colors[0] = notes[i+1].colors[0];
@@ -226,7 +226,7 @@ void Notes::saveNotes(){
 //        file.close();
     QTextStream in(&file);             //Подключаем потоки к файлам
     file.open(QIODevice::WriteOnly | QIODevice::Text);       //Открываем файлы
-    for(int i = 0; i < notes.size(); i++){
+    for(unsigned long long i = 0; i < notes.size(); i++){
         in << notes[i].label->toPlainText() + " }" + notes[i].text->toPlainText() + " }";
         in << notes[i].colors[0].name() + " }" + notes[i].colors[1].name() + " }";
     }

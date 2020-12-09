@@ -121,7 +121,7 @@ void FemaleCal::markDays(QDate firstDayInTable){
             while(i == settings.constEnd() && selDate>=prevDate.addDays(cycle)){
                 prevDate = prevDate.addDays(cycle);
                 prevDur = duration;
-                backColor.setAlpha(50);
+                backColor.setAlpha(30);
             }
             if(prevDate.daysTo(selDate) >= 0){
                 if(prevDate.daysTo(selDate) < prevDur){
@@ -453,7 +453,7 @@ void Calendar::on_showFemaleSettings_triggered()
             ui->datesTable->insertRow(ui->datesTable->rowCount());
             ui->datesTable->setItem(j,0, new QTableWidgetItem(prev_date.toString("dd.MM.yyyy")));
             ui->datesTable->setItem(j,1, new QTableWidgetItem(QString::number(prev_value)));
-            ui->datesTable->setItem(j,2, new QTableWidgetItem(QString::number(prev_date.daysTo(i.key())))); //!!!!!!!! Исправить строку на вычисление !!!!!!!!!!!!
+            ui->datesTable->setItem(j,2, new QTableWidgetItem(QString::number(prev_date.daysTo(i.key()))));
             prev_date = i.key();
             prev_value = i.value();
             ++i;
@@ -538,7 +538,7 @@ void Calendar::on_stageButton_clicked()
 
         auto i = fwidget->settings.end();
         --i;
-        i.value() = i.key().daysTo(QDate::currentDate()) + 1;
+        i.value() = (int)i.key().daysTo(QDate::currentDate()) + 1;
     }
     else {
         ui->stageButton->setText("Закончились сегодня");
@@ -571,4 +571,14 @@ void Calendar::on_datesTable_itemChanged(QTableWidgetItem *item)
         in << i.key().toString("yyyy.MM.dd") << "}" << i.value() << "}";
         ++i;
     }*/
+}
+
+void Calendar::on_switchFemaleWidget_triggered()
+{
+    if(fwidget->table->isHidden()){
+        fwidget->table->show();
+    }
+    else{
+        fwidget->table->hide();
+    }
 }

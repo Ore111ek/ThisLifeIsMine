@@ -4,17 +4,30 @@
 #include <QMainWindow>
 #include <QtWidgets>
 #include <vector>
-#include "journal.h"
+/*!
+    \file
+    \brief Заголовочный файл с описанием классов для интерфейсной части заметок
 
+    Файл содержит описание классов TNote, TGrid и Notes
+*/
+/*!
+    \brief Класс заметки
+
+    Объект класса представляет собой заметку
+*/
 class TNote{
 public:
     TNote(QTextEdit *alabel, QTextEdit *atext, QPushButton *adelButton, QColor col1, QColor col2);
-    QTextEdit *label;
-    QTextEdit *text;
-    QPushButton *delButton;
-    QColor colors[2];
+    QTextEdit *label;       ///< Название заметки(Заголовок)
+    QTextEdit *text;        ///< Содержание заметки(Текст)
+    QPushButton *delButton; ///< Кнопка удаления
+    QColor colors[2];       ///< Цвета заметки
 };
+/*!
+    \brief Класс сетки
 
+    Объект класса представляет собой контейнер для хранения виджетов
+*/
 class TGrid{
 public:
     QGridLayout *layout;
@@ -26,24 +39,31 @@ public:
 namespace Ui {
 class Notes;
 }
+/*!
+    \brief Заметки
 
+    Объект класса представляет собой окно заметок, включающее в себя обработчики событий и файл для хранения заметок
+*/
 class Notes : public QMainWindow
 {
     Q_OBJECT
 
 public:
     explicit Notes(QWidget *parent = nullptr, QString username = "Corporate");
-    QString username;           ///< Логин пользователя
-    TGrid Grid;
-    std::vector <TNote> notes;
-    std::vector <TNote> foundNotes;
-    QFile file;
-    bool searchFlag = false;
-    QColor Colors[2];
-   // bool updateFlag = false;
+    ~Notes();
+private:
     void initFile(QString name);
     void deleteNote(int index);
-    ~Notes();
+
+    QString username;           ///< Логин пользователя
+    TGrid Grid;                 ///< Сетка заметок
+    std::vector <TNote> notes;  ///< Все заметки
+    std::vector <TNote> foundNotes; ///< Заметки после поиска
+    QFile file;                 ///< Файл для хранения заметок
+    bool searchFlag = false;    ///< Флаг использования поиска
+    QColor Colors[2];           ///< Цвета для создания новой заметки
+    Ui::Notes *ui;              ///< Указатель на графический интерфейс
+
 private slots:
     void readNotes();
 
@@ -60,9 +80,6 @@ private slots:
     void on_showAllButton_clicked();
 
     void on_BackColor_clicked();
-
-private:
-    Ui::Notes *ui;
 };
 
 #endif // NOTES_H

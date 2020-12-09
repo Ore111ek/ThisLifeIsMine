@@ -9,8 +9,11 @@
 //public:
 //    SHA256();
 //};
+/*!
+    \brief Шифратор
 
-
+    Объект класса представляет собой шифратор для шифрования через алгоритм хэширования SHA256
+*/
 class SHA256
 {
 protected:
@@ -37,6 +40,8 @@ protected:
 QString sha256(QString input);
 
 QString encodeDecode(const char* input, int inputLength, const char* key, int keyLength);
+
+QString encode(QString text,QString key);
 
 void decodeFile(QString filename, QString password);
 

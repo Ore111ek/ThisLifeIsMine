@@ -18,8 +18,8 @@ Authorization::Authorization(QWidget *parent, QString *username) :
 Authorization::~Authorization()
 {
    // decodeFile("users.txt","jgrko346ojelnbjthldofi56");
-   // if(needDecode)
-    //    decodeArchive();
+    if(needDecode)
+        decodeArchive();
     delete win_reg;
     delete ui;
 }
@@ -34,7 +34,7 @@ void Authorization::on_registerButton_clicked()
 void Authorization::on_loginButton_clicked()
 {
     *login = ui->login->text();
-    QString hash, salt;
+    QString checkhash, salt;
     QString pass = ui->password->text();
 
     QFile file("users.txt");      //Создаём новый файл, в который перепишем обновлённый журнал
@@ -45,16 +45,32 @@ void Authorization::on_loginButton_clicked()
     bool newUser = true;
     while(!in.atEnd()){
         line = in.readLine();
-        if(line == *login){
-            hash = in.readLine();
-//            salt = in.readLine();
+        if(line == "}}}}" + *login){
+            line = in.readLine();
+            QString text = line;
+            if(!in.atEnd())
+                line = in.readLine();
+            while(!line.startsWith("}}}}") && !in.atEnd()){
+                text += "\n" + line;
+                line = in.readLine();
+            }
+            //if(in.atEnd())
+            //    text += "\n" + line;
+            QStringList list = text.split("}}}");
+            checkhash = list[0];
+            salt = list[1];
             newUser = false;
-//            hash = encodeDecode(hash.toLatin1().data(),hash.toLatin1().length(),
-//                                             pass.toLatin1().data(),pass.toLatin1().length());
-//            salt = encodeDecode(salt.toLatin1().data(),salt.toLatin1().length(),
-//                                             pass.toLatin1().data(),pass.toLatin1().length());
-//            if(hash == sha256(pass + salt).simplified()){
-            if(hash == sha256(ui->password->text())){
+            /*
+            hash = encodeDecode(hash.toUtf8().data(),hash.toUtf8().length(),
+                                             pass.toUtf8().data(),pass.toUtf8().length());
+            salt = encodeDecode(salt.toUtf8().data(),salt.toUtf8().length(),
+                                             pass.toUtf8().data(),pass.toUtf8().length());
+                                             */
+            //checkhash = encode(checkhash, pass);
+            //salt = encode(salt, pass);
+            if(checkhash == sha256(pass + salt).simplified()){
+            //if(hash == sha256(ui->password->text())){
+                hash = checkhash;
                 //decodeArchive();
                 needDecode = true;
                 this->close();

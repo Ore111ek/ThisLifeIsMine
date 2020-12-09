@@ -25,7 +25,7 @@ void Registration::on_registerButton_clicked()
 
         while(!in.atEnd()){
             line = in.readLine();
-            if(line == ui->login->text())
+            if(line == "}}}}" + ui->login->text())
                 unique = false;
         }
         file.close();
@@ -34,14 +34,24 @@ void Registration::on_registerButton_clicked()
 
         if(unique){
 
-            line = ui->login->text() + "\n" + sha256(ui->password->text());
-//            QString salt = QString::number(qrand() % ((99999999 + 1) - 999) + 999);
-//            QString hash = sha256(ui->password->text()+salt).simplified();
-//            line = ui->login->text() + "\n" + encodeDecode(hash.toLatin1().data(),hash.toLatin1().length(),
-//                                 ui->password->text().toLatin1().data(),ui->password->text().toLatin1().length()) + "\n";
-//            line += encodeDecode(salt.toLatin1().data(),salt.toLatin1().length(),
-//                                 ui->password->text().toLatin1().data(),ui->password->text().toLatin1().length());
+            //line = "}}}}" + ui->login->text() + "\n" + sha256(ui->password->text());
+          //Этого не было
+            QString pass = ui->password->text();
+            QString salt = QString::number(qrand() % ((99999999 + 1) - 999) + 999);
+            QString hash = sha256(ui->password->text()+salt).simplified();
+            /*
+            line = "}}}}" + ui->login->text() + "\n" + encodeDecode(hash.toUtf8().data(),hash.toUtf8().length(),
+                                 ui->password->text().toUtf8().data(),ui->password->text().toUtf8().length()) + "}}}";
+            line += encodeDecode(salt.toUtf8().data(),salt.toUtf8().length(),
+                                 ui->password->text().toUtf8().data(),ui->password->text().toUtf8().length());
+                                 */
+            //line = "}}}}" + ui->login->text() + "\n" + encode(hash, ui->password->text()) + "}}}";
+            //line += encode(salt, ui->password->text());
+            line = "}}}}" + ui->login->text() + "\n" + hash + "}}}";
+            line += salt;
+          //Вот до сюда
             in << line << endl;
+            ui->errorlabel->setText("Пользователь зарегистрирован");
         }
         else{
             ui->errorlabel->setText("Логин уже используется");

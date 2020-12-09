@@ -33,11 +33,10 @@ qint64 TIndexes::checkIndex(QString targetDate){    //targetDate в формат
         list = str.split(QLatin1Char('&')); //Разделение строки на дату и значение индекса
     }
     if(stream.atEnd() && list[0]!=targetDate) pos = -1;    //Если файл закончился и искомая дата не встретилась, то вернём -1
-    else pos = list[1].toULongLong();        //Иначе считываем позицию в файле, когда начинается искомая запись
+    else pos = (qint64)list[1].toULongLong();        //Иначе считываем позицию в файле, когда начинается искомая запись
     file.close();                   //Закрытие файла
     return pos;                     //Возвращаем позицию записи искомой даты или -1
 };
-
 /*!
 \param[in] date - дата создаваемого индекса в строчном формате "2020.04.15"
 \param[in] value - значение создаваемого индекса
@@ -73,9 +72,9 @@ void TIndexes::updateIndexes(QString date, qint64 position, qint64 length, bool 
             in << line << endl;                                     //Индекс не меняется, просто переписываем в newFile
         else if(line[0]!='&' && line.split(QLatin1Char('&'))[0]>date){  //Если больше
             QStringList list = line.split(QLatin1Char('&'));    //то разделяем строку "2020.10&45" и увеличиваем
-            in << list[0] + '&' + QString::number(list[1].toULongLong()+length+1) << endl;  //значение индекса на длину новой записи
+            in << list[0] + '&' + QString::number(list[1].toULongLong()+(unsigned long long)length+1) << endl;  //значение индекса на длину новой записи
         }else if(line[0]=='&' && flag){//Если строка не индекс, а позиция начала последней записи и новая запись не в конце файла
-            in << '&' + QString::number(line.replace(0,1,' ').trimmed().toULongLong()+length+1) << endl;//Добавить длину запись
+            in << '&' + QString::number(line.replace(0,1,' ').trimmed().toULongLong()+(unsigned long long)length+1) << endl;//Добавить длину запись
         }else if(line[0]=='&' && !flag){//Если строка - позиция начала последней записи и новая запись в конце файла
             in << '&' + QString::number(position) << endl;  //То теперь последняя запись начинается с position
         }
@@ -169,7 +168,7 @@ void TJournal::saveNew(TRecord rec){
         }
         bookmarks.file.close();     //Закрыть файл с индексами
         line.replace(0,1,' ');      //В строке размещается позиция последней записи в журнале
-        inf.seek(line.trimmed().toULongLong()); //Открываем в журнале последнюю запись
+        inf.seek((qint64)line.trimmed().toULongLong()); //Открываем в журнале последнюю запись
         line = inf.readLine();      //Считываем последнюю запись
         if('&' + rec.date < line){  //Если Дата добавляемой записи меньше последней
             QFile newFile("newDairy.txt");  //то создаём новый файл, в котором отсортированно запишем все записи
