@@ -4,14 +4,27 @@
 #include <QString>
 #include <vector>
 #include "datewindow.h"
-#include "journal.h"
 #include "qcustomplot.h"
+/*!
+    \file
+    \brief Заголовочный файл с описанием классов для интерфейсной части дневника
 
+    Файл содержит описание классов TDiarySettings и Diary
+*/
+/*!
+    \brief Данные
+
+    Объект класса представляет собой контейнер для хранения имени графика и его данных
+*/
 struct TStats{
     QString name;
     QStringList stats;
 };
+/*!
+    \brief Граф
 
+    Объект класса представляет собой граф с возможностью его отрисовки в интерфейсе
+*/
 class TGraph{
 public:
     TGraph(QCustomPlot *plot);
@@ -26,9 +39,10 @@ public:
     void drawBarsGraph2(QDate date, std::vector<TStats> data);
     void blackTheme();
     void whiteTheme();
-    QCustomPlot *customPlot;
-    TJournal *records;
+
     QColor colors[15];
+    private:
+     QCustomPlot *customPlot;
 };
 
 

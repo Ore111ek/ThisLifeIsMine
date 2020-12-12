@@ -2,11 +2,20 @@
 #define SETTINGS_H
 
 #include <QMainWindow>
+/*!
+    \file
+    \brief Заголовочный файл с описанием классов для интерфейсной части настроек
 
+    Файл содержит описание класса Settings
+*/
 namespace Ui {
 class Settings;
 }
+/*!
+    \brief Настройки
 
+    Объект класса представляет собой окно для изменения настроек, изменения пароля
+*/
 class Settings : public QMainWindow
 {
     Q_OBJECT

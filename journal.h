@@ -78,7 +78,7 @@ public:
     TIndexes bookmarks;             ///< Закладки для быстрого поиска месяца в журнале
 private:
     QFile file;                     ///< Файл с записями из дневника
-    TRecord oldRecord;              ///< Созданная ранее запись
+    //TRecord oldRecord;
 };
 
 #endif // JOURNAL_H

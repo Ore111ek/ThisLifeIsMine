@@ -47,6 +47,8 @@ class Dairy : public QMainWindow
 
 public:
     explicit Dairy(QWidget *parent = nullptr, QString name = "Corporate");  ///< Конструктор
+    ~Dairy();                   ///< Деструктор для освобождения памяти
+private:
     QString username;           ///< Логин пользователя
     TDate date;                 ///< Дата
     TJournal records;           ///< Журнал с записями
@@ -54,7 +56,7 @@ public:
     bool rewritingFlag = false; ///< Флаг режима перезаписи
     bool changeFlag = false;    ///< Флаг изменения открытой записи
     DateWindow *Cal;            ///< Окно календаря для выбора даты
-    ~Dairy();                   ///< Деструктор для освобождения памяти
+    Ui::Dairy *ui;  ///< Указатель на интерфейс дневника
 
 private slots:
     void closeEvent(QCloseEvent *event);
@@ -103,8 +105,6 @@ private slots:
 
     void on_textEdit_2_textChanged();
 
-private:
-    Ui::Dairy *ui;  ///< Указатель на интерфейс дневника
 };
 
 #endif // DAIRY_H

@@ -10,7 +10,18 @@
 #include "journal.h"
 #include "graph.h"
 
+/*!
+    \file
+    \brief Заголовочный файл с описанием классов для интерфейсной части трекера привычек
 
+    Файл содержит описание классов THobbyStatistician, THobbySettings и Hobby
+*/
+/*!
+    \brief Класс для сбора данных из журнала
+
+    Объект класса представляет собой Журнал, в котором хранятся все данные о привычках и
+    есть возможность запроса данных о них
+*/
 class THobbyStatistician : public TJournal{
 public:
     std::vector <TStats> wholeMonthStats(QDate date);
@@ -21,7 +32,11 @@ public:
     std::vector <TStats> wholeMonthSums(QDate date);
     TStats wholeMonthSums(QDate date, QString name);
 };
+/*!
+    \brief Класс настроек для трекера привычек
 
+    Объект класса представляет собой контейнер для хранения текущих привычек трекера
+*/
 class THobbySettings{
 public:
     void initFile(QString name);
@@ -33,28 +48,32 @@ public:
 namespace Ui {
 class Hobby;
 }
+/*!
+    \brief Трекер привычек
 
+    Объект класса представляет собой трекер привычек, включающий в себя обработчики событий,
+    журнал для записей и сбора данных, файл с индексами и контейнер с текущими настройками
+*/
 class Hobby : public QMainWindow
 {
     Q_OBJECT
 
 public:
     explicit Hobby(QWidget *parent = nullptr, QString name = "Corporate");
-    //THabbits habbits;
-    QString username;
+    ~Hobby();
+private:
+    QString username;           ///< Имя текущего пользователя
     TDate date;                 ///< Дата
-    THobbyStatistician records;           ///< Журнал с записями
-    THobbySettings settings;    ///< Настройки интерфейса
-    TGraph *graph;
+    THobbyStatistician records; ///< Журнал с записями
+    THobbySettings settings;    ///< Настройки
+    TGraph *graph;              ///< График для вывода данных из журнала
     DateWindow *Cal;            ///< Окно календаря для выбора даты
     bool rewritingFlag;         ///< Флаг режима перезаписи
     bool changeFlag = false;    ///< Флаг изменения открытой записи
     bool updateFlag = false;    ///< Флаг обновления формы без изменений графиков
-    ~Hobby();
+    Ui::Hobby *ui;              ///< Указатель на графический интерфейс
 
 private slots:
-
-    //void on_tableWidget_cellClicked(int row, int column);
 
     void on_createButton_clicked();
 
@@ -90,8 +109,6 @@ private slots:
 
     void on_tabWidget_tabBarClicked(int index);
 
-private:
-    Ui::Hobby *ui;
 };
 
 #endif // HOBBY_H

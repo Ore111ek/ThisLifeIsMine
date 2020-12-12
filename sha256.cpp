@@ -1,5 +1,6 @@
 #include "sha256.h"
 
+using namespace std;
 
 const unsigned int SHA256::sha256_k[64] = //UL = uint32
             {0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5,
@@ -120,12 +121,12 @@ QString sha256(QString input)
 
     SHA256 ctx = SHA256();
     ctx.init();
-    ctx.update( (const unsigned char*) input.constData(), input.length());
+    ctx.update( (const unsigned char*) input.constData(), (unsigned int)input.length());
     ctx.final(digest);
 
     char buf[2*SHA256::DIGEST_SIZE+1];
     buf[2*SHA256::DIGEST_SIZE] = 0;
-    for (int i = 0; i < SHA256::DIGEST_SIZE; i++)
+    for (unsigned int i = 0; i < SHA256::DIGEST_SIZE; i++)
         sprintf(buf+i*2, "%02x", digest[i]);
     return QString(buf);
 }
@@ -158,6 +159,32 @@ QString encodeDecode(const char* input, int inputLength, const char* key, int ke
 //   }
 //   return orignalString;
 //}
+QString encode(QString text,QString key)
+{
+    string str, str2;
+    str = text.toStdString();
+    str2 = key.toStdString();
+
+    vector<char> bytes(str.begin(), str.end());
+    bytes.push_back('\0');
+    char *c = &bytes[0];
+    vector<char> bytes2(str2.begin(), str2.end());
+    bytes.push_back('\0');
+    char *c2 = &bytes2[0];
+
+    int j = 0;
+    std::string::iterator it=str.begin();
+    for(unsigned long long i = 0; i < str.length(); i++){
+        *it = c[i]^c2[j];
+        ++it;
+        j++;
+        if(j == (int)str2.length())
+            j = 0;
+    }
+
+    text = QString::fromStdString(str);
+    return text;
+}
 
 void decodeFile(QString filename, QString password){
     QString line;
@@ -169,7 +196,8 @@ void decodeFile(QString filename, QString password){
     newFile.open(QIODevice::WriteOnly | QIODevice::Text);
       //Пока исходный файл ещё не закончен
         line = out.readAll();    //Считываем очередную строку из файла
-        line = encodeDecode(line.toUtf8().data(),line.toUtf8().length(),password.toUtf8().data(),password.toUtf8().length());
+        line = encode(line, password);
+        //line = encodeDecode(line.toUtf8().data(),line.toUtf8().length(),password.toUtf8().data(),password.toUtf8().length());
         //line = XORChiper(line.toUtf8().data(),password.toUtf8().data());
         in << line;
     file.close();                       //Закрытие файлов

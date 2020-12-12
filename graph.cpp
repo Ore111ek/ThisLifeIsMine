@@ -109,7 +109,7 @@ void TGraph::drawLinearGraph1(QDate date, std::vector<TStats> data)
           timeData[i].key = i+1;
           timeData[i].value = data[0].stats[i].toInt();
           if(timeData[i].value > max)
-              max = timeData[i].value;
+              max = (int)timeData[i].value;
         }
         customPlot->graph()->data()->set(timeData);
         customPlot->xAxis->setTicker(textTickerX);
@@ -129,14 +129,14 @@ void TGraph::drawLinearGraph1(QDate date, std::vector<TStats> data)
           customPlot->graph()->setName("Итоговая сумма");
           // generate random walk data:
           QSharedPointer<QCPAxisTickerText> textTickerX(new QCPAxisTickerText);
-          QVector<QCPGraphData> timeData(data.size());
-          for (int i=0; i<data.size(); ++i)
+          QVector<QCPGraphData> timeData((int)data.size());
+          for (unsigned long long i=0; i<data.size(); ++i)
           {
             textTickerX->addTick(i+1, data[i].name + "\n" + data[i].stats[0]);
-            timeData[i].key = i+1;
-            timeData[i].value = data[i].stats[0].toInt();
-            if(timeData[i].value > max)
-                max = timeData[i].value;
+            timeData[(int)i].key = i+1;
+            timeData[(int)i].value = data[i].stats[0].toInt();
+            if(timeData[(int)i].value > max)
+                max = (int)timeData[(int)i].value;
           }
           customPlot->graph()->data()->set(timeData);
           customPlot->xAxis->setTicker(textTickerX);
@@ -151,16 +151,16 @@ void TGraph::drawLinearGraph1(QDate date, std::vector<TStats> data)
         // seconds of current time, we'll use it as starting point in time for data:
 
         double now = QDateTime(date).toTime_t() + 3600*3;
-        for (int gi = 0; gi < data.size(); ++gi)
+        for (unsigned long long gi = 0; gi < data.size(); ++gi)
         {
           customPlot->addGraph();
           QColor color = colors[gi%15];
           if(gi < 5)
-            color = QColor(20+200/4.0*gi, 70*(1.6-gi/4.0), 150, 150);
+            color = QColor(20+(int)(200/4.0*(int)gi), 70*(int)(1.6-(int)gi/4.0), 150, 150);
           if(gi >=5 && gi < 9)
-            color = QColor(20+200/4.0*(gi-5), 150, 70*(1.6-(gi-5)/4.0), 150);
+            color = QColor(20+(int)(200/4.0*((int)gi-5)), 150, (int)(70*(1.6-((int)gi-5)/4.0)), 150);
           if(gi >= 9)
-            color = QColor(150,70*(1.6-(gi-9)/4.0), 20+200/4.0*(gi-9), 150);
+            color = QColor(150,(int)(70*(1.6-((int)gi-9)/4.0)), 20+(int)(200/4.0*((int)gi-9)), 150);
           if(gi >= 14){
             color = QColor(colors[gi%15]);
             color.setAlpha(150);
@@ -176,7 +176,7 @@ void TGraph::drawLinearGraph1(QDate date, std::vector<TStats> data)
             timeData[i].key = now + 24*3600*i;
             timeData[i].value = data[gi].stats[i].toULongLong();
             if(timeData[i].value > max)
-                max = timeData[i].value;
+                max = (int)timeData[i].value;
           }
           customPlot->graph()->data()->set(timeData);
         }
@@ -229,7 +229,7 @@ void TGraph::drawLinearGraph2(QDate date, std::vector<TStats> data)
     int max = 0;
     if(data.size()==1 && data[0].stats.length()==12){
         customPlot->addGraph();
-        pen.setColor(QColor(qSin(1.2)*80+80, qSin(+0)*80+80, qSin(1.5)*80+80));
+        pen.setColor(QColor((int)(qSin(1.2)*80)+80, (int)(qSin(+0)*80)+80, (int)(qSin(1.5)*80)+80));
         customPlot->graph()->setPen(pen);
         customPlot->graph()->setLineStyle(QCPGraph::lsLine);
         customPlot->graph()->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 5));
@@ -245,7 +245,7 @@ void TGraph::drawLinearGraph2(QDate date, std::vector<TStats> data)
           timeData[i].key = i+1;
           timeData[i].value = data[0].stats[i].toInt();
           if(timeData[i].value > max)
-              max = timeData[i].value;
+              max = (int)timeData[i].value;
         }
         customPlot->graph()->data()->set(timeData);
         customPlot->xAxis->setTicker(textTickerX);
@@ -255,9 +255,8 @@ void TGraph::drawLinearGraph2(QDate date, std::vector<TStats> data)
       customPlot->xAxis->setRange(0, 13);
     }
     else if(data[0].stats.length()==1){
-        double now = QDateTime(date).toTime_t() + 3600*3;
         customPlot->addGraph();
-        pen.setColor(QColor(qSin(1.2)*80+80, qSin(+0)*80+80, qSin(1.5)*80+80));
+        pen.setColor(QColor((int)(qSin(1.2)*80)+80, (int)(qSin(+0)*80)+80, (int)(qSin(1.5))*80+80));
         customPlot->graph()->setPen(pen);
         customPlot->graph()->setName("Итоговая сумма");
 
@@ -266,14 +265,14 @@ void TGraph::drawLinearGraph2(QDate date, std::vector<TStats> data)
         customPlot->graph()->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 5));
         // generate data:
         QSharedPointer<QCPAxisTickerText> textTickerX(new QCPAxisTickerText);
-        QVector<QCPGraphData> timeData(data.size());
-        for (int i=0; i<data.size(); ++i)
+        QVector<QCPGraphData> timeData((int)data.size());
+        for (unsigned long long i=0; i<data.size(); ++i)
         {
           textTickerX->addTick(i+1, data[i].name + "\n" + data[i].stats[0]);
-          timeData[i].key = i+1;
-          timeData[i].value = data[i].stats[0].toInt();
-          if(timeData[i].value > max)
-              max = timeData[i].value;
+          timeData[(int)i].key = i+1;
+          timeData[(int)i].value = data[i].stats[0].toInt();
+          if(timeData[(int)i].value > max)
+              max = (int)timeData[(int)i].value;
         }
         customPlot->graph()->data()->set(timeData);
         customPlot->xAxis->setTicker(textTickerX);
@@ -283,10 +282,10 @@ void TGraph::drawLinearGraph2(QDate date, std::vector<TStats> data)
 
     }else{
         double now = QDateTime(date).toTime_t() + 3600*3;
-        for (int gi = 0; gi < data.size(); ++gi)
+        for (unsigned long long gi = 0; gi < data.size(); ++gi)
         {
           customPlot->addGraph();
-          pen.setColor(QColor(qSin(gi*1+1.2)*80+80, qSin(gi*0.3+0)*80+80, qSin(gi*0.3+1.5)*80+80));
+          pen.setColor(QColor((int)(qSin(gi*1+1.2)*80)+80, (int)(qSin(gi*0.3+0)*80)+80, (int)(qSin(gi*0.3+1.5)*80)+80));
           customPlot->graph()->setPen(pen);
           customPlot->graph()->setName(data[gi].name);
 
@@ -301,7 +300,7 @@ void TGraph::drawLinearGraph2(QDate date, std::vector<TStats> data)
             timeData[i].key = now + 24*3600*i;
             timeData[i].value = data[gi].stats[i].toULongLong();
             if(timeData[i].value > max)
-                max = timeData[i].value;
+                max = (int)timeData[i].value;
           }
           customPlot->graph()->data()->set(timeData);
           }
@@ -358,7 +357,7 @@ void TGraph::drawLinearGraph3(QDate date, std::vector<TStats> data)
           timeData[i].key = i+1;
           timeData[i].value = data[0].stats[i].toInt();
           if(timeData[i].value > max)
-              max = timeData[i].value;
+              max = (int)timeData[(int)i].value;
         }
         customPlot->graph()->data()->set(timeData);
         customPlot->xAxis->setTicker(textTickerX);
@@ -368,7 +367,6 @@ void TGraph::drawLinearGraph3(QDate date, std::vector<TStats> data)
       customPlot->xAxis->setRange(0, 13);
     }
     else if(data[0].stats.length()==1){
-        double now = QDateTime(date).toTime_t() + 3600*3;
         customPlot->addGraph();
         customPlot->graph()->setLineStyle(QCPGraph::lsLine);
         customPlot->graph()->setPen(QPen(QColor(120, 120, 120), 2));
@@ -376,14 +374,14 @@ void TGraph::drawLinearGraph3(QDate date, std::vector<TStats> data)
         customPlot->graph()->setName("Итоговая сумма");
         // generate data:
         QSharedPointer<QCPAxisTickerText> textTickerX(new QCPAxisTickerText);
-        QVector<QCPGraphData> timeData(data.size());
-        for (int i=0; i<data.size(); ++i)
+        QVector<QCPGraphData> timeData((int)data.size());
+        for (unsigned long long i=0; i<data.size(); ++i)
         {
           textTickerX->addTick(i+1, data[i].name + "\n" + data[i].stats[0]);
-          timeData[i].key = i+1;
-          timeData[i].value = data[i].stats[0].toInt();
-          if(timeData[i].value > max)
-              max = timeData[i].value;
+          timeData[(int)i].key = i+1;
+          timeData[(int)i].value = data[i].stats[0].toInt();
+          if(timeData[(int)i].value > max)
+              max = (int)timeData[(int)i].value;
         }
         customPlot->graph()->data()->set(timeData);
         customPlot->xAxis->setTicker(textTickerX);
@@ -393,7 +391,7 @@ void TGraph::drawLinearGraph3(QDate date, std::vector<TStats> data)
 
     }else{
     double now = QDateTime(date).toTime_t() + 3600*3;
-    for (int gi = 0; gi < data.size(); ++gi)
+    for (unsigned long long gi = 0; gi < data.size(); ++gi)
     {
       customPlot->addGraph();
       //QColor color(20+200/4.0*gi,70*(1.6-gi/4.0), 150, 150);
@@ -415,7 +413,7 @@ void TGraph::drawLinearGraph3(QDate date, std::vector<TStats> data)
         timeData[i].key = now + 24*3600*i;
         timeData[i].value = data[gi].stats[i].toULongLong();
         if(timeData[i].value > max)
-            max = timeData[i].value;
+            max = (int)timeData[i].value;
       }
       customPlot->graph()->data()->set(timeData);
 
@@ -521,7 +519,7 @@ void TGraph::drawBarsGraph1(QDate date, std::vector<TStats> data)
           timeData[i].key = i+1;
           timeData[i].value = data[0].stats[i].toInt();
           if(timeData[i].value > max)
-              max = timeData[i].value;
+              max = (int)timeData[i].value;
         }
       // configure left axis text labels:
       customPlot->xAxis->setLabel("Дата");
@@ -531,7 +529,7 @@ void TGraph::drawBarsGraph1(QDate date, std::vector<TStats> data)
     }
     else if(data[0].stats.length()==1){
 
-        for(int i = 0; i < data.size(); i++){
+        for(unsigned long long i = 0; i < data.size(); i++){
             ticks <<i+1;
             labels << data[i].name + "\n" + data[i].stats[0];
         }
@@ -547,7 +545,7 @@ void TGraph::drawBarsGraph1(QDate date, std::vector<TStats> data)
             int maxlocal = 0;
           // generate random walk data:
             QVector<double> barsData;
-          for (int i=0; i<data.size(); ++i)
+          for (unsigned long long i=0; i<data.size(); ++i)
           {
               barsData  << data[i].stats[0].toInt();
               if(data[i].stats[0].toInt() > maxlocal)
@@ -575,7 +573,7 @@ void TGraph::drawBarsGraph1(QDate date, std::vector<TStats> data)
         customPlot->xAxis->setTicker(textTickerX);
 
 
-        for (int gi = 0; gi < data.size(); ++gi)
+        for (unsigned long long gi = 0; gi < data.size(); ++gi)
         {
             QCPBars *bars = new QCPBars(customPlot->xAxis, customPlot->yAxis);
             bars->setAntialiased(false); // gives more crisp, pixel aligned bar borders
@@ -652,7 +650,7 @@ void TGraph::drawBarsGraph2(QDate date, std::vector<TStats> data)
             x[i] = i + 1;
             y[i] = data[0].stats[i].toInt();
             if(y[i] > maxlocal)
-                maxlocal = y[i];
+                maxlocal = (int)y[i];
           }
           max = maxlocal;
           QCPBars *bars = new QCPBars(customPlot->xAxis, customPlot->yAxis);
@@ -661,9 +659,6 @@ void TGraph::drawBarsGraph2(QDate date, std::vector<TStats> data)
           bars->setPen(Qt::NoPen);
           bars->setBrush(QColor(10, 140, 70, 160));
           bars->setName(data[0].name);
-
-
-
         QSharedPointer<QCPAxisTickerText> textTickerX(new QCPAxisTickerText);
         for (int i=0; i<data[0].stats.length(); ++i)
         {
@@ -680,13 +675,13 @@ void TGraph::drawBarsGraph2(QDate date, std::vector<TStats> data)
     else if(data[0].stats.length()==1){
             int maxlocal = 0;
           // generate random walk data:
-          QVector<double> x(data.size()), y(data.size());
+          QVector<double> x((int)data.size()), y((int)data.size());
           for (int i=0; i<x.size(); ++i)
           {
             x[i] = i + 1;
-            y[i] = data[i].stats[0].toInt();
+            y[i] = data[(unsigned long long)i].stats[0].toInt();
             if(y[i] > maxlocal)
-                maxlocal = y[i];
+                maxlocal = (int)y[i];
           }
           max = maxlocal;
           QCPBars *bars = new QCPBars(customPlot->xAxis, customPlot->yAxis);
@@ -696,7 +691,7 @@ void TGraph::drawBarsGraph2(QDate date, std::vector<TStats> data)
           bars->setBrush(QColor(10, 140, 70, 160));
           bars->setName("Итоговая сумма");
           QSharedPointer<QCPAxisTickerText> textTickerX(new QCPAxisTickerText);
-          for (int i=0; i<data.size(); ++i)
+          for (unsigned long long i=0; i<data.size(); ++i)
           {
             textTickerX->addTick(i+1, data[i].name + "\n" + data[i].stats[0]);
           }
@@ -709,7 +704,7 @@ void TGraph::drawBarsGraph2(QDate date, std::vector<TStats> data)
         QCPBars *prevbars = nullptr;
         // seconds of current time, we'll use it as starting point in time for data:
         double now = QDateTime(date).toTime_t() + 3600*3;
-        for (int gi = 0; gi < data.size(); ++gi)
+        for (unsigned long long gi = 0; gi < data.size(); ++gi)
         {
             int maxlocal = 0;
           // generate random walk data:
@@ -719,7 +714,7 @@ void TGraph::drawBarsGraph2(QDate date, std::vector<TStats> data)
             x[i] = now + 24*3600*i;
             y[i] = data[gi].stats[i].toInt();
             if(y[i] > maxlocal)
-                maxlocal = y[i];
+                maxlocal = (int)y[i];
           }
           max += maxlocal;
           QCPBars *bars = new QCPBars(customPlot->xAxis, customPlot->yAxis);
@@ -727,7 +722,7 @@ void TGraph::drawBarsGraph2(QDate date, std::vector<TStats> data)
           bars->setData(x, y);
           bars->setPen(Qt::NoPen);
           QColor color = colors[gi%15];
-          color.setAlpha(220 - gi*5);
+          color.setAlpha(220 - (int)gi*5);
           bars->setBrush(color);
           bars->setName(data[gi].name);
           if(prevbars != nullptr)

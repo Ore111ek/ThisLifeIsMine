@@ -20,10 +20,10 @@ Menu::~Menu()
     delete win_a;   //Освобождение памяти,
     delete win_c;   //выделенной для окон,
     delete win_d;   //вызванных из Меню
-    delete win_t;
+    //delete win_t;
     delete win_n;
     delete win_h;
-    delete win_b;
+    //delete win_b;
     delete win_p;
     delete win_s;
     delete ui;      //Освобождение пямяти для интерфейса Меню
@@ -43,12 +43,12 @@ void Menu::on_showDiary_triggered()
     win_d->show();                //Отобразить окно нового дневника
 }
 //Освобождение и выделение памяти для расписания, отображение окна созданного расписания
-void Menu::on_showTimetable_triggered()
-{
-    delete win_t;                 //Удаление уже существующего расписания
-    win_t = new Timetable(this);  //Выделение памяти для нового расписания
-    win_t->show();                //Отобразить окно нового расписания
-}
+//void Menu::on_showTimetable_triggered()
+//{
+//    delete win_t;                 //Удаление уже существующего расписания
+//    win_t = new Timetable(this);  //Выделение памяти для нового расписания
+//    win_t->show();                //Отобразить окно нового расписания
+//}
 //Освобождение и выделение памяти для заметок, отображение созданного окна заметок
 void Menu::on_showNotes_triggered()
 {
@@ -64,12 +64,12 @@ void Menu::on_showHobby_triggered()
     win_h->show();                //Отобразить окно нового хобби
 }
 //Освобождение и выделение памяти для бюджета, отображение окна созданного бюджета
-void Menu::on_showBudget_triggered()
-{
-    delete win_b;                 //Удаление уже существующего бюджета
-    win_b = new Budget(this);     //Выделение памяти для нового бюджета
-    win_b->show();                //Отобразить окно нового бюджета
-}
+//void Menu::on_showBudget_triggered()
+//{
+//    delete win_b;                 //Удаление уже существующего бюджета
+//    win_b = new Budget(this);     //Выделение памяти для нового бюджета
+//    win_b->show();                //Отобразить окно нового бюджета
+//}
 //Освобождение и выделение памяти для планировщика, отображение окна созданного планировщика
 void Menu::on_showPlanner_triggered()
 {

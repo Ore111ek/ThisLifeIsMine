@@ -6,7 +6,17 @@
 #include "journal.h"
 #include "datewindow.h"
 #include <map>
+/*!
+    \file
+    \brief Заголовочный файл с описанием классов для интерфейсной части ежедневника
 
+    Файл содержит описание классов TList, TTable, TPlannerSettings и Planner
+*/
+/*!
+    \brief Класс Список
+
+    Объект класса позволяет реализовать зачеркивание, редактирование и удаление элементов списка
+*/
 class TList{
 public:
     QString listText(QListWidget *list);
@@ -15,7 +25,11 @@ public:
     void addNew(QListWidget *updlist, QListWidgetItem *item);
     void delEmpty(QListWidget *updlist, QListWidgetItem *item);
 };
+/*!
+    \brief Класс Таблица
 
+    Объект класса позволяет реализовать зачеркивание, редактирование и удаление элементов таблицы
+*/
 class TTable{
 public:
     QString tableText(QTableWidget *table);
@@ -26,7 +40,7 @@ public:
 /*!
     \brief Класс настроек для ежедневника
 
-    Объект класса представляет собой контейнер для хранения текущих интерфейсных настроек ежедневника
+    Объект класса представляет собой контейнер для хранения текущих интерфейсных настроек ежедневника, а именно работает с категориями
 */
 class TPlannerSettings{
 public:
@@ -39,29 +53,36 @@ public:
 namespace Ui {
 class Planner;
 }
+/*!
+    \brief Ежедневник
 
+    Объект класса представляет собой ежедневник, включающий в себя обработчики событий,
+    журнал для записей, файл с индексами и контейнер с текущими настройками интерфейса
+*/
 class Planner : public QMainWindow
 {
     Q_OBJECT
 
 public:
     explicit Planner(QWidget *parent = nullptr, QString name = "Corporate");
-    QString username;           ///< Логин пользователя
-    TDate date[2];                 ///< Дата
-    TList list;
-    TTable table;
-    TJournal records[3];           ///< Журнал с записями
-    TPlannerSettings settings;    ///< Настройки интерфейса дневника
-    int categoryIndex;
-    bool rewritingFlagW = false; ///< Флаг режима перезаписи
-    bool rewritingFlagD = false; ///< Флаг режима перезаписи
-    bool changeFlagW = false;
-    bool changeFlagD = false;
-    bool searchFlag = false;
-    DateWindow *Cal[2];            ///< Окно календаря для выбора даты
-    QListWidget *week[8] = {};
-    QLabel *labels[7] = {};
     ~Planner();
+private:
+    QString username;           ///< Логин пользователя
+    TDate date[2];              ///< Дата
+    TList list;                 ///< Список дел на день
+    TTable table;               ///< Таблица для расписания на день
+    TJournal records[3];        ///< Журналы с записями на год, неделю, день
+    TPlannerSettings settings;  ///< Настройки интерфейса дневника
+    int categoryIndex;          ///< Индекс текущей категории
+    bool rewritingFlagW = false;///< Флаг режима перезаписи
+    bool rewritingFlagD = false;///< Флаг режима перезаписи
+    bool changeFlagW = false;   ///< Флаг режима изменений интерфейса для недели
+    bool changeFlagD = false;   ///< Флаг режима изменений интерфейса для дня
+    bool searchFlag = false;    ///< Флаг режима поиска
+    DateWindow *Cal[2];         ///< Окно календаря для выбора даты
+    QListWidget *week[8] = {};  ///< Списки дел на каждый день недели и лист заметок
+    QLabel *labels[7] = {};     ///< Заголовки дней недели
+    Ui::Planner *ui;
 
 private slots:
 
@@ -119,8 +140,6 @@ private slots:
 
     void on_notes_textChanged();
 
-private:
-    Ui::Planner *ui;
 };
 
 #endif // PLANNER_H
