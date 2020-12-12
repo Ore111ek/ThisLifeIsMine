@@ -7,19 +7,14 @@ Authorization::Authorization(QWidget *parent, QString *username) :
 {
     login = username;
     ui->setupUi(this);
-
-
-
-
-
   //  decodeFile("users.txt","jgrko346ojelnbjthldofi56");
 }
 
 Authorization::~Authorization()
 {
    // decodeFile("users.txt","jgrko346ojelnbjthldofi56");
-    if(needDecode)
-        decodeArchive();
+    //if(needDecode)
+       // decodeArchive();
     delete win_reg;
     delete ui;
 }
@@ -33,7 +28,7 @@ void Authorization::on_registerButton_clicked()
 
 void Authorization::on_loginButton_clicked()
 {
-    *login = ui->login->text();
+    QString loginstr = ui->login->text();
     QString checkhash, salt;
     QString pass = ui->password->text();
 
@@ -45,7 +40,7 @@ void Authorization::on_loginButton_clicked()
     bool newUser = true;
     while(!in.atEnd()){
         line = in.readLine();
-        if(line == "}}}}" + *login){
+        if(line == "}}}}" + loginstr){
             line = in.readLine();
             QString text = line;
             if(!in.atEnd())
@@ -72,12 +67,13 @@ void Authorization::on_loginButton_clicked()
             //if(hash == sha256(ui->password->text())){
                 hash = checkhash;
                 //decodeArchive();
-                needDecode = true;
+               // needDecode = true;
+                *login = ui->login->text();
                 this->close();
             }
             else{
                 ui->errorlabel->setText("Неправильный пароль");
-                *login = "Corporate";
+                //*login = "Corporate";
             }
 
         }
@@ -92,6 +88,7 @@ void Authorization::on_loginButton_clicked()
 
 void Authorization::on_corporateButton_clicked()
 {
+    *login = "Corporate";
     this->close();
 }
 
