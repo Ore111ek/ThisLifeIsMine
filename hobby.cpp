@@ -532,3 +532,21 @@ void Hobby::on_tabWidget_tabBarClicked(int index)
         drawGraph();
     }
 }
+
+void Hobby::on_prevMonthButton_clicked()
+{
+    QDate date = QDate(ui->Date_year->date().year(), ui->Date_month->date().month(), 1);
+    date = date.addMonths(-1);
+    ui->Date_month->setDate(date);
+    ui->Date_year->setDate(date);
+    on_findButton_clicked();
+}
+
+void Hobby::on_nextMonthButton_clicked()
+{
+    QDate date = QDate(ui->Date_year->date().year(), ui->Date_month->date().month(), 1);
+    date = date.addMonths(1);
+    ui->Date_month->setDate(date);
+    ui->Date_year->setDate(date);
+    on_findButton_clicked();
+}
