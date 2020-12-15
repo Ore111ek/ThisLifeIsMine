@@ -352,7 +352,11 @@ border: 1px solid rgb(165, 165, 165);
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QSpinBox" name="periodSpin"/>
+        <widget class="QSpinBox" name="periodSpin">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+        </widget>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_3">
@@ -367,7 +371,11 @@ border: 1px solid rgb(165, 165, 165);
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QSpinBox" name="cycleSpin"/>
+        <widget class="QSpinBox" name="cycleSpin">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -443,7 +451,11 @@ color: white;
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="spinNewPeriod"/>
+        <widget class="QSpinBox" name="spinNewPeriod">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QPushButton" name="addCycleButton">
