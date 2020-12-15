@@ -408,6 +408,8 @@ void Calendar::on_saveFemaleSettings_clicked()
     if(ui->stageButton->text()=="Начались сегодня")
         fwidget->stage = false;
     else fwidget->stage = true;
+    fwidget->cycle = ui->cycleSpin->value();
+    fwidget->duration = ui->periodSpin->value();
     fwidget->saveFemaleSettings();
     ui->femaleSettingsWidget->hide();
     fwidget->markDays(dateFromTable(0,0));
